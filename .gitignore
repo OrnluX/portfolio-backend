@@ -1,0 +1,33 @@
+# Dependencias de Composer
+/vendor/
+
+# Archivos de configuración sensibles
+.env
+
+# Archivos de log
+*.log
+*.err
+*.out
+
+# Archivos de lock (composer)
+composer.lock
+
+# Archivos temporales
+*.tmp
+*.swp
+*.bak
+
+# Cachés comunes
+.cache/
+.phpunit.result.cache
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Configs del editor
+.vscode/
+.idea/
+
+# Archivos de entorno WSL
+*~ 

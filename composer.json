@@ -1,0 +1,7 @@
+{
+    "name": "ivan/portfolio-api",
+    "require": {
+        "vlucas/phpdotenv": "^5.5",
+        "phpmailer/phpmailer": "^6.10"
+    }
+}

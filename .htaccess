@@ -1,0 +1,22 @@
+# Desactivar listado de directorios
+Options -Indexes
+
+# Solo permitir el acceso al directorio /api y archivos dentro
+RewriteEngine On
+
+# Bloquear carpetas sensibles
+RewriteRule ^(vendor|config)($|/) - [F,L]
+
+# Bloquear cualquier archivo que empiece con un punto (como .env, .git, etc.)
+RewriteRule (^|/)\..+ - [F,L]
+
+# Permitir solo llamadas a archivos PHP en /api
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteRule ^.*$ - [F,L]
+
+# Seguridad adicional con headers
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "DENY"
+  Header always set X-XSS-Protection "1; mode=block"
+</IfModule>
