@@ -4,7 +4,6 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
-require_once __DIR__ . '/../middleware/auth.php'; // Protección con API Key
 require_once __DIR__ . '/../../config/conexion.php';
 require_once __DIR__ . '/../../config/middleware.php';
 

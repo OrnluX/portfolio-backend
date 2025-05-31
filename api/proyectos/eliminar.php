@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
 $dotenv->load();
 
-require_once __DIR__ . '/../middleware/auth.php'; // Protección con API Key
+require_once __DIR__ . '/../middleware/jwt_auth.php'; // ✅ Protección con JWT
 require_once __DIR__ . '/../../config/conexion.php';
 require_once __DIR__ . '/../../config/middleware.php';
 
@@ -28,4 +28,3 @@ try {
     http_response_code(500);
     echo json_encode(['status' => 'error', 'mensaje' => 'Error al eliminar el proyecto']);
 }
-
