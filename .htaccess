@@ -1,17 +1,26 @@
 # Desactivar listado de directorios
 Options -Indexes
 
-# Solo permitir el acceso al directorio /api y archivos dentro
 RewriteEngine On
+RewriteBase /
 
 # Bloquear carpetas sensibles
 RewriteRule ^(vendor|config)($|/) - [F,L]
 
-# Bloquear cualquier archivo que empiece con un punto (como .env, .git, etc.)
+# Bloquear archivos ocultos como .env, .git, etc.
 RewriteRule (^|/)\..+ - [F,L]
 
-# Permitir solo llamadas a archivos PHP en /api
+# Rutas limpias bajo /proyectos/
+RewriteRule ^proyectos$ api/proyectos/index.php [L]
+RewriteRule ^proyectos/crear$ api/proyectos/crear.php [L]
+RewriteRule ^proyectos/editar$ api/proyectos/editar.php [L]
+RewriteRule ^proyectos/eliminar$ api/proyectos/eliminar.php [L]
+
+# Evitar acceso externo a otras rutas que no sean /api o /proyectos/*
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_URI} !^/proyectos/
 RewriteRule ^.*$ - [F,L]
 
 # Seguridad adicional con headers
