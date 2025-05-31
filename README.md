@@ -74,7 +74,7 @@ Verificá el acceso en [http://localhost](http://localhost)
 ## 👨‍💻 Autor
 
 **Ivan Tarquini**  
-GitHub: [@tuusuario](https://github.com/OrnluX)
+GitHub: [@OrnluX](https://github.com/OrnluX)
 
 ---
 
