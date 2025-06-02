@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../middleware/cors.php';
 require_once __DIR__ . '/../../vendor/autoload.php';
 require_once __DIR__ . '/../../config/conexion.php';
 require_once __DIR__ . '/../../helpers/jwt.php';

@@ -21,7 +21,8 @@ $token = $matches[1];
 // Verificar y decodificar el token
 try {
     $payload = verificarToken($token);
-    $_AUTH = $payload;
+    // $_AUTH = $payload;
+    define('AUTH_PAYLOAD', $payload);
 
 } catch (ExpiredException $e) {
     http_response_code(401);
