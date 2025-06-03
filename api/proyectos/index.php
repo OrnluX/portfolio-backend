@@ -27,7 +27,7 @@ try {
 
     echo json_encode([
         'status' => 'ok',
-        'data' => $proyectos
+        'proyectos' => $proyectos
     ]);
 } catch (mysqli_sql_exception $e) {
     error_log('❌ Error SQL: ' . $e->getMessage());

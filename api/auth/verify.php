@@ -8,7 +8,7 @@ echo json_encode([
   'status' => 'ok',
   'mensaje' => 'Token válido',
   'usuario' => [
-        'id' => $_AUTH_PAYLOAD->user_id ?? null,
-        'email' => $_AUTH_PAYLOAD->email ?? null
+        'id' => AUTH_PAYLOAD->user_id ?? null,
+        'email' => AUTH_PAYLOAD->email ?? null
     ]
 ]);

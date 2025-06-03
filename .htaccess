@@ -1,31 +1,32 @@
-# Desactivar listado de directorios
+# Evita listado de directorios
 Options -Indexes
 
+# Habilita mod_rewrite
 RewriteEngine On
 RewriteBase /
 
-# Bloquear carpetas sensibles
+# 🔐 Seguridad: bloquea carpetas y archivos sensibles
 RewriteRule ^(vendor|config)($|/) - [F,L]
-
-# Bloquear archivos ocultos como .env, .git, etc.
 RewriteRule (^|/)\..+ - [F,L]
 
-# Rutas limpias bajo /proyectos/
+# 🔁 Rutas limpias para /proyectos
 RewriteRule ^proyectos$ api/proyectos/index.php [L]
 RewriteRule ^proyectos/crear$ api/proyectos/crear.php [L]
 RewriteRule ^proyectos/editar$ api/proyectos/editar.php [L]
 RewriteRule ^proyectos/eliminar$ api/proyectos/eliminar.php [L]
 
-# Evitar acceso externo a otras rutas que no sean /api o /proyectos/*
+# 🔒 Bloquea acceso a rutas fuera de /api y /proyectos
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/api/
 RewriteCond %{REQUEST_URI} !^/proyectos/
 RewriteRule ^.*$ - [F,L]
 
-# Seguridad adicional con headers
+# 🛡️ Headers de seguridad
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set X-Frame-Options "DENY"
   Header always set X-XSS-Protection "1; mode=block"
 </IfModule>
+
+

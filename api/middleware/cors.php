@@ -3,7 +3,7 @@
 
 header('Access-Control-Allow-Origin: *'); // ⚠️ Cambiar a dominio real en producción
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS');
-header('Access-Control-Allow-Headers: Content-Type, X-API-Key');
+header('Access-Control-Allow-Headers: Content-Type, X-API-Key, Authorization');
 
 // Responder rápidamente a preflight OPTIONS
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
