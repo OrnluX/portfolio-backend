@@ -15,8 +15,6 @@ Este es el backend de mi portafolio personal desarrollado en PHP, corriendo sobr
 | `api/`            | Endpoints de la API REST                        |
 | `config/`         | Configuración (base de datos, constantes, etc.) |
 | `helpers/`        | Funciones reutilizables                         |
-| `vendor/`         | Dependencias de Composer _(ignorado en Git)_    |
-| `.env`            | Variables de entorno _(ignorado en Git)_        |
 | `.gitignore`      | Exclusiones para Git                            |
 | `composer.json`   | Definición de dependencias PHP                  |
 | `index.html`      | Página base o de redirección                    |
@@ -39,7 +37,7 @@ Este es el backend de mi portafolio personal desarrollado en PHP, corriendo sobr
 
 ```bash
 # 1. Clonar el repositorio
-git clone https://github.com/tuusuario/backend-portfolio.git
+git clone https://github.com/OrnluX/backend-portfolio.git
 cd backend-portfolio
 
 # 2. Instalar dependencias
